@@ -1,38 +1,75 @@
-.App {
-  text-align: center;
+.App{
+  padding:10px;
+}
+.App>h1 {
+  font-weight: 600;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.BookListContainer , .BookAddContainer{
+  flex:0.5
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.BookListContainer > ul{
+  font-weight: 300;
+  font-size: 24px;
+  margin: 10px 0px;
+  max-height: 40vh;
+  overflow-y: auto;
+  background: #d6d6d6;
+  padding-block: 10px;
+  border-radius: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#singlebutton{
+  font-weight: 300;
+  font-size: 18px;
 }
 
-.App-link {
-  color: #61dafb;
+.flex-container{
+  display:flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.BookAddContainer > form > fieldset{
+  border:none;
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.control-label{
+  padding-top:0px !important;
+}
+
+.book-container-list{
+  list-style: none;
+}
+
+.book-container{
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition-duration: 0.3s;
+  padding: 5px;
+  width: max-content;
+  border-radius: 5px;
+}
+
+.book-container::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: black; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+  transition-duration: 0.2s;
+}
+
+.book-container:hover:before {
+  transition-duration: 0.5s;
+  color: black; /* Change the color */
+}
+
+
+.book-container:hover{
+ background: black;
+ color: white;
+ transition-duration: 0.5s;
 }
